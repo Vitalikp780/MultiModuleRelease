@@ -14,6 +14,7 @@
         <child.version>0.1-SNAPSHOT</child.version>
         <child-one.version>0.1-SNAPSHOT</child-one.version>
         <child-two.version>0.1-SNAPSHOT</child-two.version>
+        <maven.versions.plugin>2.5</maven.versions.plugin>
     </properties>
 
     <dependencyManagement>
@@ -41,5 +42,15 @@
         <module>child-one</module>
         <module>child-two</module>
     </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${maven.versions.plugin}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
