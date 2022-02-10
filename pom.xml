@@ -8,52 +8,55 @@
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
-    <modules>
-        <module>child</module>
-        <module>child2</module>
-        <module>child3</module>
-    </modules>
+
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <encoding>UTF-8</encoding>
+        <child.version>0.1-SNAPSHOT</child.version>
+        <child-one.version>0.1-SNAPSHOT</child-one.version>
+        <child-two.version>0.1-SNAPSHOT</child-two.version>
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
         <project.resource.sourceEncoding>${encoding}</project.resource.sourceEncoding>
         <archetype.encoding>${encoding}</archetype.encoding>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>child</artifactId>
+                <version>${child.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>child-one</artifactId>
+                <version>${child-one.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>child-two</artifactId>
+                <version>${child-two.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>child</module>
+        <module>child-one</module>
+        <module>child-two</module>
+    </modules>
+
     <scm>
-        <connection>scm:git:git@github.com:Vitalikp780/ReliseVersion.git</connection>
-        <developerConnection>scm:git:git@github.com/Vitalikp780/ReliseVersion.git</developerConnection>
-        <url>https://github.com/Vitalikp780/ReliseVersion</url>
+        <connection>scm:git:git@github.com:Vitalikp780/MultiModuleRelease.git</connection>
+        <developerConnection>scm:git:git@github.com/Vitalikp780/MultiModuleRelease.git</developerConnection>
+        <url>https://github.com/Vitalikp780/MultiModuleRelease</url>
         <tag>@{project.version}</tag>
     </scm>
+
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.0.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                            <mainClass>org.example.VersionDemo</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
