@@ -49,12 +49,34 @@
         <module>child-two</module>
     </modules>
 
+    <scm>
+        <connection>scm:git:git@github.com:Vitalikp780/MultiModuleRelease.git</connection>
+        <developerConnection>scm:git:git@github.com/Vitalikp780/MultiModuleRelease.git</developerConnection>
+        <url>https://github.com/Vitalikp780/MultiModuleRelease</url>
+        <tag>@{project.version}</tag>
+    </scm>
+
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${maven.versions.plugin}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <localCheckout>true</localCheckout>
+                    <pushChanges>false</pushChanges>
+                    <goals>pre-integration-test</goals>
+                    <preparationGoals>package</preparationGoals>
+                    <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <remoteTagging>false</remoteTagging>
+                </configuration>
             </plugin>
         </plugins>
     </build>
