@@ -18,7 +18,7 @@
         <connection>scm:git:git@github.com:Vitalikp780/MultiModuleRelease.git</connection>
         <developerConnection>scm:git:git@github.com/Vitalikp780/MultiModuleRelease.git</developerConnection>
         <url>https://github.com/Vitalikp780/MultiModuleRelease</url>
-        <tag>1.2</tag>
+        <tag>1.3</tag>
     </scm>
 
 
