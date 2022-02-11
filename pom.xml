@@ -7,13 +7,13 @@
     <groupId>org.example</groupId>
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.0</version>
+    <version>1.0.4</version>
 
     <properties>
         <encoding>UTF-8</encoding>
-        <child.version>2.0.0</child.version>
-        <child-one.version>2.0.0</child-one.version>
-        <child-two.version>2.0.0</child-two.version>
+        <child.version>0.2.4</child.version>
+        <child-one.version>0.3.4</child-one.version>
+        <child-two.version>0.1.5</child-two.version>
         <maven.versions.plugin>2.9.0</maven.versions.plugin>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
