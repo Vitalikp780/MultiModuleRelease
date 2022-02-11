@@ -7,14 +7,20 @@
     <groupId>org.example</groupId>
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.3.0</version>
 
     <properties>
         <encoding>UTF-8</encoding>
-        <child.version>0.1-SNAPSHOT</child.version>
-        <child-one.version>0.1-SNAPSHOT</child-one.version>
-        <child-two.version>0.1-SNAPSHOT</child-two.version>
+        <child.version>0.1.0</child.version>
+        <child-one.version>0.1.0</child-one.version>
+        <child-two.version>0.1.0</child-two.version>
         <maven.versions.plugin>2.5</maven.versions.plugin>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+        <project.resource.sourceEncoding>${encoding}</project.resource.sourceEncoding>
+        <archetype.encoding>${encoding}</archetype.encoding>
     </properties>
 
     <dependencyManagement>
