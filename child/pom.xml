@@ -3,22 +3,15 @@
     <parent>
         <artifactId>MultiModuleRelease</artifactId>
         <groupId>org.example</groupId>
-        <version>1.0.10</version>
+        <version>1.0.24</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>child</artifactId>
     <groupId>org.example</groupId>
-    <version>1.0.8</version>
+    <version>${git.branch}.1.0.10</version>
     <packaging>jar</packaging>
 
     <name>child</name>
-
-
-    <build>
-        <plugins>
-
-        </plugins>
-    </build>
 
 </project>
