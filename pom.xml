@@ -5,7 +5,7 @@
     <groupId>org.example</groupId>
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.7</version>
+    <version>1.0.10</version>
 
     <properties>
         <encoding>UTF-8</encoding>
