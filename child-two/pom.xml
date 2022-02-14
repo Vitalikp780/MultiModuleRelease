@@ -3,13 +3,13 @@
     <parent>
         <artifactId>MultiModuleRelease</artifactId>
         <groupId>org.example</groupId>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>child-two</artifactId>
     <groupId>org.example</groupId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>jar</packaging>
 
     <name>child-two</name>
@@ -18,7 +18,6 @@
         <connection>scm:git:git@github.com:Vitalikp780/MultiModuleRelease.git</connection>
         <developerConnection>scm:git:git@github.com/Vitalikp780/MultiModuleRelease.git</developerConnection>
         <url>https://github.com/Vitalikp780/MultiModuleRelease</url>
-        <tag>master</tag>
     </scm>
 
 

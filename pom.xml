@@ -5,7 +5,7 @@
     <groupId>org.example</groupId>
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 
     <properties>
         <encoding>UTF-8</encoding>
@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>child-two</artifactId>
-                <version>1.0.6</version>
+                <version>${child-one.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
