@@ -5,13 +5,13 @@
     <groupId>org.example</groupId>
     <artifactId>MultiModuleRelease</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.4</version>
+    <version>1.0.6</version>
 
     <properties>
         <encoding>UTF-8</encoding>
-        <child.version>0.2.4</child.version>
-        <child-one.version>0.3.4</child-one.version>
-        <child-two.version>0.1.5</child-two.version>
+        <child.version>0.0.1</child.version>
+        <child-one.version>0.0.1</child-one.version>
+        <child-two.version>0.0.1</child-two.version>
         <maven.versions.plugin>2.9.0</maven.versions.plugin>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>child-two</artifactId>
-                <version>${child-two.version}</version>
+                <version>1.0.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -51,7 +51,6 @@
         <connection>scm:git:git@github.com:Vitalikp780/MultiModuleRelease.git</connection>
         <developerConnection>scm:git:git@github.com/Vitalikp780/MultiModuleRelease.git</developerConnection>
         <url>https://github.com/Vitalikp780/MultiModuleRelease</url>
-        <tag>master</tag>
     </scm>
 
     <build>
@@ -66,7 +65,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <goals>deploy</goals>
+                    <goals>package</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <localCheckout>true</localCheckout>
                     <pushChanges>false</pushChanges>
@@ -75,6 +74,38 @@
                     <tagNameFormat>@{project.version}</tagNameFormat>
                     <remoteTagging>false</remoteTagging>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Implementation-Build>$\{buildNumber}</Implementation-Build>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>pre-process-classes</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>pre-process</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
