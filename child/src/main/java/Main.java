@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello git rebase i control");
+        System.out.println("hello git rebase i total one");
     }
 }
